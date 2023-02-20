@@ -15,34 +15,52 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
     <meta name="color-scheme" content="light dark">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <link rel="stylesheet" href="css/index.css">
     <title>TP Menu Pizza</title>
 </head>
 
 <body>
-    <div class="pizzas">
-        <div class="pizza">
-            <p>Fromages</p>
-            <p>( Cheddar, Oignons )</p>
-        </div>
-        <div>
-            <p>Margarita</p>
-            <p>( mozza, tomate )</p>
-        </div>
-        <div id="newPizza"></div>
-        <form action="" id="pizzaForm">
-            <div id="divNom">
-                <label for="nomPizzza">Ajouter un nom à la pizza</label>
-                <input type="text" name="nomPizza" id="nomPizza">
-            </div>
-            <div id="divIngredient">
-                <label for="ingredient">Indiquez un ingrédient</label>
-                <input type="text" name="ingredient" id="ingredient">
-            </div>
+    <h1>Menu pizzas</h1>
+    <div class="error"></div>
 
-            <input type="submit" value="Ajouter" id="ajoutPizza" onclick="addPizza()">
-        </form>
-    </div>
+    <ion-app>
+        <ion-content>
+            <ion-breadcrumbs>
+                <ion-breadcrumb href="#home">
+                    <ion-icon slot="start" name="home"></ion-icon>
+                    Home
+                </ion-breadcrumb>
+                <ion-breadcrumb href="#pizza">
+                    <ion-icon slot="start" name="home"></ion-icon>
+                    Pizza
+                </ion-breadcrumb>
+            </ion-breadcrumbs>
+
+            <ion-button id="bt-alert">Click Me</ion-button>
+
+            <form action="" id="pizzaForm">
+                <div id="divNom">
+                    <label for="nomPizzza">Ajouter un nom à la pizza</label>
+                    <input type="text" name="nomPizza" id="nomPizza" placeholder="Nom de la pizza" autocomplete="off">
+                </div>
+                <div id="divIngredient">
+                    <label for="ingredient">Indiquez un ingrédient</label>
+                    <input type="text" name="ingredient" id="ingredient" placeholder="Ingrédients" autocomplete="off">
+                </div>
+
+                <input type="submit" value="Ajouter" id="ajoutPizza">
+
+                <ion-grid>
+                    <ion-row class="pizzas"></ion-row>
+                </ion-grid>
+            </form>
+
+        </ion-content>
+    </ion-app>
+
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
 </body>
