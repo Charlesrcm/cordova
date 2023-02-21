@@ -27,38 +27,53 @@
     <div class="error"></div>
 
     <ion-app>
-        <ion-content>
-            <ion-breadcrumbs>
-                <ion-breadcrumb href="#home">
-                    <ion-icon slot="start" name="home"></ion-icon>
-                    Home
-                </ion-breadcrumb>
-                <ion-breadcrumb href="#pizza">
-                    <ion-icon slot="start" name="home"></ion-icon>
-                    Pizza
-                </ion-breadcrumb>
-            </ion-breadcrumbs>
 
-            <ion-button id="bt-alert">Click Me</ion-button>
-
-            <form action="" id="pizzaForm">
-                <div id="divNom">
-                    <label for="nomPizzza">Ajouter un nom à la pizza</label>
-                    <input type="text" name="nomPizza" id="nomPizza" placeholder="Nom de la pizza" autocomplete="off">
+        <ion-tabs>
+            <ion-tab tab="home">
+                <ion-nav id="home-nav"></ion-nav>
+                <div id="home-page">
+                    <ion-header>
+                        <ion-toolbar>
+                            <ion-title>Accueil</ion-title>
+                        </ion-toolbar>
+                    </ion-header>
+                    <ion-content>
+                        <main>
+                            <h1>Bienvenue sur ce site</h1>
+                        </main>
+                    </ion-content>
                 </div>
-                <div id="divIngredient">
-                    <label for="ingredient">Indiquez un ingrédient</label>
-                    <input type="text" name="ingredient" id="ingredient" placeholder="Ingrédients" autocomplete="off">
+            </ion-tab>
+            <ion-tab tab="pizzas">
+                <ion-nav id="pizzas-nav"></ion-nav>
+                <div id="pizzas-page">
+                    <ion-header>
+                        <ion-toolbar>
+                            <ion-title>Liste des pizzas</ion-title>
+                        </ion-toolbar>
+                    </ion-header>
+                    <ion-content>
+                        <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+                            <ion-fab-button id="bt-create-pizza">
+                                <ion-icon name="add"></ion-icon>
+                            </ion-fab-button>
+                        </ion-fab>
+                        <ion-list id="pizzas-list" lines="none"></ion-list>
+                    </ion-content>
                 </div>
+            </ion-tab>
 
-                <input type="submit" value="Ajouter" id="ajoutPizza">
-
-                <ion-grid>
-                    <ion-row class="pizzas"></ion-row>
-                </ion-grid>
-            </form>
-
-        </ion-content>
+            <ion-tab-bar slot="bottom">
+                <ion-tab-button tab="home">
+                    <ion-icon name="home"></ion-icon>
+                    Accueil
+                </ion-tab-button>
+                <ion-tab-button tab="pizzas">
+                    <ion-icon name="pizza-outline"></ion-icon>
+                    Menu pizzas
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
     </ion-app>
 
     <script src="cordova.js"></script>
