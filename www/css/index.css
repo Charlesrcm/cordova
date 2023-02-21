@@ -4,54 +4,15 @@ main{
     justify-content: center;
     height: 100vh;
 }
-body {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    padding: 30px;
+
+.alert-bt-base.is-cream {
+    text-decoration: line-through;
 }
 
-body > * {
-    padding-bottom: 5px;
+ion-item.tomato-base {
+    --background : tomato;
 }
 
-#pizzaForm{
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-#ajoutPizza{
-    border: 1px solid white;
-    padding: 8px;
-    margin-top: 10px;
-}
-
-ion-grid{
-    min-width: auto;
-    margin: 0;
-}
-
-ion-breadcrumbs{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-#delete{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-/* .pizzas {
-    min-width: 350px;
-}
-
-.pizza > p:first-of-type {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: -15px;
- } */
-
-#pizzaCard{
-    max-width: 180px;
+ion-item.cream-base{
+    --background: lightgoldenrodyellow;
 }
